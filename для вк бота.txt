@@ -1,0 +1,16 @@
+https://oauth.vk.com/authorize?client_id=6726489display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=friends,messages,notify,photos,audio,video,stories,pages,status,notes,wall,ads,offline,docs,groups,notifications,stats,email,market&response_type=token&v=5.87
+
+https://oauth.vk.com/blank.html#access_token=abe5eecd87579bd8cf49afbe73f0eceb0530fe40cb3676bebac491b169630ccd11e2d1db2670d973f575a&expires_in=0&user_id=495812590
+
+
+						ƒÀﬂ √–”œœ€
+
+
+
+https://oauth.vk.com/authorize?client_id=6726489&group_ids=173453365&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=messages,stories,photos,app_widget,docs,manage&response_type=token&v=5.87
+
+https://oauth.vk.com/blank.html#expires_in=0&access_token_173453365=6c082b2fcd6be18178e76fd5e37b4887e9e76cac72d7659dae196ff78fca67df0d943c00fd36bedbecf9f
+
+						Id Ã≈Ã ¡Œ“¿
+96591297
+
