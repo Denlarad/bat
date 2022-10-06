@@ -1,0 +1,246 @@
+--create database SuperSoft
+
+use SuperSoft
+
+--create Table managers(
+--id int Identity Primary key,
+--firstName char(50),
+--lastName char(50),
+--fathName char(50)
+--)
+
+--create Table executors(
+--id int identity Primary key,
+--firstName char(50),
+--lastName char(50),
+--fathName char(50)
+--)
+
+--create Table tasks(
+--id int identity Primary key,
+--name char(50),
+--description text,
+--startAt datetimeoffset,
+--endAt datetimeoffset,
+--endedAt datetimeoffset null,
+--state char(15),
+--extReason text null,
+--Constraint check_state Check(state in ('Не начата','Выполняется','Завершна','Отложнна'))
+--)
+
+--create Table projects(
+--id int identity Primary key,
+--name char(50),
+--)
+
+--create Table ToDoList(
+--id int identity,
+--taskId int null,
+--description text,
+--executorId int Unique,
+--Constraint exeId Foreign key (executorId) references executors (id),
+--Constraint taskId Foreign key (taskId) references tasks (id)
+--)
+
+--create table execProjects(
+--id int identity,
+--executorId int Unique,
+--projectId int Unique,
+--Constraint execId Foreign key (executorId) references executors (id),
+--Constraint projId Foreign key (projectId) references projects (id)
+--)
+
+--create table manProjects(
+--id int identity,
+--managerId int,
+--projectId int Unique,
+--Constraint manId Foreign key (managerId) references managers (id),
+--Constraint projsId Foreign key (projectId) references projects (id)
+--)
+
+--insert into managers (lastName,firstName,fathName)
+--values ('Жмышенко','Валерий','Альбертович')
+--insert into managers (lastName,firstName,fathName)
+--values ('Фокин','Александр','Борисович')
+--insert into managers (lastName,firstName,fathName)
+--values ('Назаров','Игорь','Алексеивич')
+--insert into managers (lastName,firstName,fathName)
+--values ('Кузнецов','Сергей','Генадиевич')
+--insert into managers (lastName,firstName,fathName)
+--values ('Титор','Николай','Андреевич')
+--insert into managers (lastName,firstName,fathName)
+--values ('Сидоров','Антон','Игоревич')
+--insert into managers (lastName,firstName,fathName)
+--values ('Куликов','Денис','Максимович')
+--insert into managers (lastName,firstName,fathName)
+--values ('Соловьев','Вячеслав','Никитович')
+--insert into managers (lastName,firstName,fathName)
+--values ('Литвиников','Никита','Александрович')
+
+--insert into executors(lastName,firstName,fathName)
+--values ('Пушной','Александр','Борисович')
+--insert into executors(lastName,firstName,fathName)
+--values ('Каневский','Леонид','Семёнович')
+--insert into executors(lastName,firstName,fathName)
+--values ('Никулин','Юрий','Владимирович')
+--insert into executors(lastName,firstName,fathName)
+--values ('Вицин','Георгий','Михаилович')
+--insert into executors(lastName,firstName,fathName)
+--values ('Моргунов','Евгений','Александрович')
+--insert into executors(lastName,firstName,fathName)
+--values ('Леонов','Евгений','Павлович')
+--insert into executors(lastName,firstName,fathName)
+--values ('Цой','Виктор','Робертович')
+--insert into executors(lastName,firstName,fathName)
+--values ('Круг','Михаил','Владимирович')
+--insert into executors(lastName,firstName,fathName)
+--values ('Роман','Донской','Иванович')
+--insert into executors(lastName,firstName,fathName)
+--values ('Моштаков','Юрий','Александрович')
+
+--insert into projects
+--values ('Labs')
+--insert into projects
+--values ('Civ VII')
+--insert into projects
+--values ('HEAVY UPDATE')
+--insert into projects
+--values ('CCTV software')
+--insert into projects
+--values ('Torrent')
+--insert into projects
+--values ('unknown site')
+--insert into projects
+--values ('Rutube')
+--insert into projects
+--values ('speech recognition')
+--insert into projects
+--values ('hideout cat')
+--insert into projects
+--values ('fix microwave')
+
+
+--insert into execProjects
+--values(1,1)
+--insert into execProjects
+--values(4,8)
+--insert into execProjects
+--values(3,6)
+--insert into execProjects
+--values(9,5)
+--insert into execProjects
+--values(5,2)
+--insert into execProjects
+--values(2,9)
+--insert into execProjects
+--values(8,3)
+--insert into execProjects
+--values(7,4)
+--insert into execProjects
+--values(6,7)
+--insert into execProjects
+--values(10,10)
+
+--insert into manProjects
+--values(1,1)
+--insert into manProjects
+--values(1,8)
+--insert into manProjects
+--values(1,6)
+--insert into manProjects
+--values(7,5)
+--insert into manProjects
+--values(5,2)
+--insert into manProjects
+--values(9,9)
+--insert into manProjects
+--values(7,3)
+--insert into manProjects
+--values(10,4)
+--insert into manProjects
+--values(5,7)
+--insert into manProjects
+--values(7,10)
+
+--insert into tasks(name,description,startAt,endAt,endedAt,state)
+--values('SQl lab 1','do whatever','2022-09-01 00:00:00','2022-10-25 17:00:00.00','2022-09-20 16:00:00','Завершна')
+--insert into tasks(name,description,startAt,endAt,endedAt,state)
+--values('SQl lab 2','do whatever','2022-09-01 00:00:00','2022-10-25 17:00:00.00','2022-09-20 16:00:00','Завершна')
+--insert into tasks(name,description,startAt,endAt,state,extReason)
+--values('SQl lab 3','do whatever','2022-09-01 00:00:00','2022-09-15 17:00:00.00','Отложнна','Да')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('remove every add ','make shure you look smart','23-12-2007 15:00:00','23-06-2011 09:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('delete response add ','make shure you look smart','23-01-2019 18:00:00','02-07-2015 05:00:00','Выполняется')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('rewrite response features ','make shure you look smart','18-11-2011 22:00:00','18-06-2015 09:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('gui get music ','make shure you look smart','19-04-2017 20:00:00','14-04-2013 15:00:00','Выполняется')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('rewrite sus get ','make shure you look smart','05-06-2019 19:00:00','04-02-2021 17:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('rewrite sus lag ','make shure you look smart','13-01-2008 11:00:00','15-05-2006 17:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('lag response every ','make shure you look smart','03-05-2007 11:00:00','01-09-2000 21:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('sus nothing gui ','make shure you look smart','09-08-2015 10:00:00','05-10-2010 09:00:00','Выполняется')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('gui nothing add ','make shure you look smart','19-03-2020 06:00:00','23-07-2016 19:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('sus music response ','make shure you look smart','01-08-2021 09:00:00','20-03-2016 18:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('remove nothing remove ','make shure you look smart','19-05-2008 06:00:00','17-10-2004 09:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('delete music fix ','make shure you look smart','13-01-2018 12:00:00','15-04-2004 18:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('features remove bug ','make shure you look smart','03-01-2021 07:00:00','10-10-2011 07:00:00','Выполняется')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('rewrite add bug ','make shure you look smart','09-06-2008 20:00:00','07-02-2003 06:00:00','Выполняется')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('every gui every ','make shure you look smart','17-09-2017 10:00:00','11-08-2020 04:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('bug fix every ','make shure you look smart','14-09-2002 19:00:00','04-12-2013 16:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('delete get bug ','make shure you look smart','22-12-2016 14:00:00','07-03-2011 16:00:00','Выполняется')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('fix lag remove ','make shure you look smart','19-04-2005 14:00:00','05-09-2019 02:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('sus fix get ','make shure you look smart','13-10-2017 05:00:00','21-04-2000 20:00:00','Выполняется')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('fix get sus ','make shure you look smart','18-06-2002 05:00:00','15-12-2011 23:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('sus music bug ','make shure you look smart','19-04-2004 15:00:00','12-09-2008 05:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('every remove bug ','make shure you look smart','04-05-2017 08:00:00','06-01-2005 09:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('response get music ','make shure you look smart','08-09-2010 11:00:00','08-08-2005 14:00:00','Выполняется')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('gui lag fix ','make shure you look smart','01-01-2009 21:00:00','19-08-2018 21:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('lag lag sus ','make shure you look smart','05-08-2018 13:00:00','01-03-2019 21:00:00','Не начата')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('rewrite remove lag ','make shure you look smart','06-11-2014 01:00:00','02-04-2018 04:00:00','Выполняется')
+--insert into tasks(name,description,startAt,endAt,state)
+--values('rewrite lag fix ','make shure you look smart','03-09-2010 06:00:00','23-04-2005 16:00:00','Выполняется')
+
+
+--insert into ToDoList (taskId,description,executorId)
+--values (1,'die but do',1)
+--insert into ToDoList (taskId,description,executorId)
+--values (14,'die but do',4)
+--insert into ToDoList (taskId,description,executorId)
+--values (23,'die but do',8)
+--insert into ToDoList (taskId,description,executorId)
+--values (16,'die but do',3)
+--insert into ToDoList (taskId,description,executorId)
+--values (30,'die but do',6)
+--insert into ToDoList (taskId,description,executorId)
+--values (10,'die but do',7)
+--insert into ToDoList (taskId,description,executorId)
+--values (22,'die but do',9)
+--insert into ToDoList (description,executorId)
+--values ('send Help',10)
+--insert into ToDoList (description,executorId)
+--values ('send Heгp',2)
+--insert into ToDoList (description,executorId)
+--values ('send Help',5)
